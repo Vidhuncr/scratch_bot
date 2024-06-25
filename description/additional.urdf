@@ -1,0 +1,71 @@
+        <!-- 
+<ros2_control name="scratch_bot" type="system">
+        <hardware>
+                <plugin>greenbot_arduino/GreenBotSystemHardware</plugin>
+                <param name="wheel_delta_a_name">delta_a</param>
+                <param name="wheel_delta_b_name">delta_b</param>
+                <param name="wheel_delta_c_name">delta_c</param>
+                <param name="wheel_delta_d_name">delta_d</param>
+
+
+                <param name="device_delta">/dev/ttyACM0</param>
+
+                <param name="loop_rate">300</param>
+                <param name="baud_rate">9600</param>
+                <param name="timeout_ms">1000</param>
+                <param name="enc_counts_per_rev">93132</param>
+        </hardware>
+
+        <joint name="delta_a">
+                <command_interface name="velocity" />
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+        </joint>
+        <joint name="delta_b">
+                <command_interface name="velocity" />
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+        </joint>
+        <joint name="delta_c">
+                <command_interface name="velocity" />
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+        </joint>
+        <joint name="delta_d">
+                <command_interface name="velocity" />
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+        </joint>
+</ros2_control> -->
+
+<ros2_control name="MockHardwareSystem" type="system">
+        <hardware>
+                <plugin>mock_components/GenericSystem</plugin>
+                <param name="calculate_dynamics">false</param>
+                <param name="custom_interface_with_following_offset"></param>
+                <param name="disable_commands">false</param>
+                <param name="mock_gpio_commands">false</param>
+                <param name="mock_sensor_commands">false</param>
+                <param name="position_state_following_offset">0.0</param>
+        </hardware>
+        <joint name="delta_a">
+                <command_interface name="velocity" />
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+        </joint>
+        <joint name="delta_b">
+                <command_interface name="velocity" />
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+        </joint>
+        <joint name="delta_c">
+                <command_interface name="velocity" />
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+        </joint>
+        <joint name="delta_d">
+                <command_interface name="velocity" />
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+        </joint>
+</ros2_control>

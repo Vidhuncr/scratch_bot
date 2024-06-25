@@ -1,0 +1,8 @@
+{
+    "documentId": "40b8d6c0d9497945e7b31625",
+    "robotName": "greenbot",
+    "packageName" : "greenbot_description/model",
+    "addDummyBaseLink" : true ,
+    "outputFormat": "urdf",
+    "additionalUrdfFile": "additional.urdf"
+}

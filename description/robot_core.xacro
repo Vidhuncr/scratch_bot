@@ -1,0 +1,591 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="inertial_macros.xacro"/>
+
+        <link name="base_link"></link>
+        <joint name="base_link_to_base" type="fixed">
+                <parent link="base_link" />
+                <child link="chasis" />
+                <origin rpy="0.0 0 01.57" xyz="0 0 0" />
+        </joint>
+        <link name="chasis">
+                <visual>
+                        <origin xyz="0 0 0" rpy="0 -0 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/chasis.stl" />
+                        </geometry>
+                        <material name="chasis_material">
+                                <color
+                                        rgba="0.64705882352941179736 0.64705882352941179736 0.64705882352941179736 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin xyz="0 0 0" rpy="0 -0 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/chasis.stl" />
+                        </geometry>
+                </collision>
+                <visual>
+                        <origin
+                                xyz="-0.26636531114578243518 0.43309999999999998499 0.67039999999999988489"
+                                rpy="3.141592653589793116 -0 0" />
+                        <geometry>
+                                <mesh
+                                        filename="package://scratch_bot/description/laser_frame.stl" />
+                        </geometry>
+                        <material name="laser_frame_material">
+                                <color
+                                        rgba="0.2313725490196078538 0.38039215686274507888 0.7058823529411765163 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="-0.26636531114578243518 0.43309999999999998499 0.67039999999999988489"
+                                rpy="3.141592653589793116 -0 0" />
+                        <geometry>
+                                <mesh
+                                        filename="package://scratch_bot/description/laser_frame.stl" />
+                        </geometry>
+                </collision>
+                <visual>
+                        <origin xyz="0 0 0" rpy="0 -0 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_1.stl" />
+                        </geometry>
+                        <material name="part_1_material">
+                                <color
+                                        rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin xyz="0 0 0" rpy="0 -0 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_1.stl" />
+                        </geometry>
+                </collision>
+                <visual>
+                        <origin
+                                xyz="-0.26636531114578243518 0.43309999999999998499 0.58840000000000003411"
+                                rpy="3.141592653589793116 -0 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_6.stl" />
+                        </geometry>
+                        <material name="part_6_material">
+                                <color
+                                        rgba="0.64705882352941179736 0.64705882352941179736 0.64705882352941179736 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="-0.26636531114578243518 0.43309999999999998499 0.58840000000000003411"
+                                rpy="3.141592653589793116 -0 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_6.stl" />
+                        </geometry>
+                </collision>
+                <inertial>
+                        <origin
+                                xyz="-0.0077519865967426099598 0.011476704309865836881 0.33228101185280067842"
+                                rpy="0 0 0" />
+                        <mass value="41.808636830309950483" />
+                        <inertia ixx="3.174595554811997733" ixy="0.12408923219907323776"
+                                ixz="0.061131412613050370441" iyy="3.4026479119684061025"
+                                iyz="-0.090504174362115427654" izz="6.0175318142041360758" />
+                </inertial>
+        </link>
+
+        <link name="part_4">
+                <visual>
+                        <origin
+                                xyz="-0.38099999999999978328 0.4064000000000000945 -0.26939999999999991731"
+                                rpy="0 -0 7.9364039121364244939e-49" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_4.stl" />
+                        </geometry>
+                        <material name="part_4_material">
+                                <color
+                                        rgba="0.98039215686274505668 0.71372549019607844922 0.0039215686274509803377 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="-0.38099999999999978328 0.4064000000000000945 -0.26939999999999991731"
+                                rpy="0 -0 7.9364039121364244939e-49" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_4.stl" />
+                        </geometry>
+                </collision>
+                <inertial>
+                        <origin
+                                xyz="-5.5511151231257827021e-17 1.6653345369377348106e-16 -0.078504789688329357222"
+                                rpy="0 0 0" />
+                        <mass value="1.6288621573055650504" />
+                        <inertia ixx="0.0059608080766996619781" ixy="2.0310811345286319499e-50"
+                                ixz="0" iyy="0.005504741289673344834" iyz="0"
+                                izz="0.00069920316242749573632" />
+                </inertial>
+        </link>
+
+        <link name="part_5">
+                <visual>
+                        <origin
+                                xyz="0.40639999999999987246 0.11429999999999983229 0.38849999999999973443"
+                                rpy="1.570796326794896558 1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_5.stl" />
+                        </geometry>
+                        <material name="part_5_material">
+                                <color
+                                        rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="0.40639999999999987246 0.11429999999999983229 0.38849999999999973443"
+                                rpy="1.570796326794896558 1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_5.stl" />
+                        </geometry>
+                </collision>
+                <visual>
+                        <origin
+                                xyz="-1.1102230246251565404e-16 0.11430000000000008209 -0.5259000000000004782"
+                                rpy="1.570796326794896558 -1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/tyre.stl" />
+                        </geometry>
+                        <material name="tyre_material">
+                                <color
+                                        rgba="0.49803921568627451677 0.49803921568627451677 0.49803921568627451677 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="-1.1102230246251565404e-16 0.11430000000000008209 -0.5259000000000004782"
+                                rpy="1.570796326794896558 -1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/tyre.stl" />
+                        </geometry>
+                </collision>
+                <inertial>
+                        <origin
+                                xyz="-0.00019743341295440328966 5.3692835344862657089e-06 -0.051294107386095723344"
+                                rpy="0 0 0" />
+                        <mass value="3.2210221139911539012" />
+                        <inertia ixx="0.011390144360114604419" ixy="-8.6782398273335449849e-07"
+                                ixz="-1.1069057905008794439e-05" iyy="0.011358257288014471723"
+                                iyz="3.0102761970439183956e-07" izz="0.016727345977025440821" />
+                </inertial>
+        </link>
+
+        <joint name="delta_a" type="revolute">
+                <origin xyz="0.0075000000000000066613 0 -0.15509999999999987685"
+                        rpy="-1.570796326794896558 -2.2776579365114115375e-16 1.570796326794896558" />
+                <parent link="part_4" />
+                <child link="part_5" />
+                <axis xyz="0 0 1" />
+                <limit effort="1" velocity="20" lower="-3.141592653589793116"
+                        upper="3.141592653589793116" />
+                <joint_properties friction="0.0" />
+        </joint>
+
+        <joint name="gamma_a" type="fixed">
+                <origin xyz="-0.38099999999999967226 -0.40640000000000003899 0.26939999999999991731"
+                        rpy="4.6222318665293660473e-32 -6.1232339957367648033e-17 3.141592653589793116" />
+                <parent link="chasis" />
+                <child link="part_4" />
+                <axis xyz="0 0 1" />
+                <limit effort="1" velocity="20" />
+                <joint_properties friction="0.0" />
+        </joint>
+
+        <link name="part_4_2">
+                <visual>
+                        <origin
+                                xyz="-0.38099999999999978328 0.4064000000000000945 -0.26939999999999991731"
+                                rpy="0 -0 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_4.stl" />
+                        </geometry>
+                        <material name="part_4_material">
+                                <color
+                                        rgba="0.98039215686274505668 0.71372549019607844922 0.0039215686274509803377 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="-0.38099999999999978328 0.4064000000000000945 -0.26939999999999991731"
+                                rpy="0 -0 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_4.stl" />
+                        </geometry>
+                </collision>
+                <inertial>
+                        <origin
+                                xyz="-5.5511151231257827021e-17 1.6653345369377348106e-16 -0.078504789688329357222"
+                                rpy="0 0 0" />
+                        <mass value="1.6288621573055650504" />
+                        <inertia ixx="0.0059608080766996619781" ixy="-2.3212828920804189505e-83"
+                                ixz="0" iyy="0.005504741289673344834" iyz="0"
+                                izz="0.00069920316242749573632" />
+                </inertial>
+        </link>
+
+        <link name="part_5_2">
+                <visual>
+                        <origin
+                                xyz="0.40639999999999987246 0.11429999999999984617 0.38849999999999973443"
+                                rpy="1.570796326794896558 1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_5.stl" />
+                        </geometry>
+                        <material name="part_5_material">
+                                <color
+                                        rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="0.40639999999999987246 0.11429999999999984617 0.38849999999999973443"
+                                rpy="1.570796326794896558 1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_5.stl" />
+                        </geometry>
+                </collision>
+                <visual>
+                        <origin
+                                xyz="-0.00038552631445859519843 -0.11428951545201321283 -0.5259000000000004782"
+                                rpy="-1.570796326794896558 -1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/tyre.stl" />
+                        </geometry>
+                        <material name="tyre_material">
+                                <color
+                                        rgba="0.49803921568627451677 0.49803921568627451677 0.49803921568627451677 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="-0.00038552631445859519843 -0.11428951545201321283 -0.5259000000000004782"
+                                rpy="-1.570796326794896558 -1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/tyre.stl" />
+                        </geometry>
+                </collision>
+                <inertial>
+                        <origin
+                                xyz="-5.448554203581890262e-05 1.4817569090277327181e-06 -0.051294107386095723344"
+                                rpy="0 0 0" />
+                        <mass value="3.2210221139911539012" />
+                        <inertia ixx="0.011390144314616518217" ixy="-8.694969886002538982e-07"
+                                ixz="-3.0547191113998530505e-06" iyy="0.011358195770075241171"
+                                iyz="8.3074352926070967653e-08" izz="0.016727284413588120598" />
+                </inertial>
+        </link>
+
+        <joint name="delta_b" type="revolute">
+                <origin xyz="0.0074999999999998401279 0 -0.15509999999999987685"
+                        rpy="-1.570796326794896558 -2.7849232498350446554e-16 1.570796326794896558" />
+                <parent link="part_4_2" />
+                <child link="part_5_2" />
+                <axis xyz="0 0 1" />
+                <limit effort="1" velocity="20" lower="-3.141592653589793116"
+                        upper="3.141592653589793116" />
+                <joint_properties friction="0.0" />
+        </joint>
+
+        <joint name="gamma_b" type="fixed">
+                <origin xyz="0.38099999999999978328 -0.40640000000000020552 0.26939999999999991731"
+                        rpy="6.8422776578360208541e-49 -0 -1.1102230246251565404e-16" />
+                <parent link="chasis" />
+                <child link="part_4_2" />
+                <axis xyz="0 0 1" />
+                <limit effort="1" velocity="20" />
+                <joint_properties friction="0.0" />
+        </joint>
+
+        <link name="part_4_3">
+                <visual>
+                        <origin
+                                xyz="-0.38099999999999972777 0.4064000000000000945 -0.26939999999999991731"
+                                rpy="0 -0 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_4.stl" />
+                        </geometry>
+                        <material name="part_4_material">
+                                <color
+                                        rgba="0.98039215686274505668 0.71372549019607844922 0.0039215686274509803377 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="-0.38099999999999972777 0.4064000000000000945 -0.26939999999999991731"
+                                rpy="0 -0 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_4.stl" />
+                        </geometry>
+                </collision>
+                <inertial>
+                        <origin xyz="0 1.6653345369377348106e-16 -0.078504789688329357222"
+                                rpy="0 0 0" />
+                        <mass value="1.6288621573055650504" />
+                        <inertia ixx="0.0059608080766996619781" ixy="0" ixz="0"
+                                iyy="0.005504741289673344834" iyz="0"
+                                izz="0.00069920316242749573632" />
+                </inertial>
+        </link>
+
+        <link name="part_5_3">
+                <visual>
+                        <origin
+                                xyz="-0.00038552631445853968728 -0.11428951545201319895 -0.5259000000000004782"
+                                rpy="-1.570796326794896558 -1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/tyre.stl" />
+                        </geometry>
+                        <material name="tyre_material">
+                                <color
+                                        rgba="0.49803921568627451677 0.49803921568627451677 0.49803921568627451677 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="-0.00038552631445853968728 -0.11428951545201319895 -0.5259000000000004782"
+                                rpy="-1.570796326794896558 -1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/tyre.stl" />
+                        </geometry>
+                </collision>
+                <visual>
+                        <origin
+                                xyz="0.40639999999999987246 0.11429999999999986005 0.38849999999999973443"
+                                rpy="1.570796326794896558 1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_5.stl" />
+                        </geometry>
+                        <material name="part_5_material">
+                                <color
+                                        rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="0.40639999999999987246 0.11429999999999986005 0.38849999999999973443"
+                                rpy="1.570796326794896558 1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_5.stl" />
+                        </geometry>
+                </collision>
+                <inertial>
+                        <origin
+                                xyz="-5.4485542035799251455e-05 1.4817569090416105059e-06 -0.051294107386095792733"
+                                rpy="0 0 0" />
+                        <mass value="3.2210221139911539012" />
+                        <inertia ixx="0.011390144314616521687" ixy="-8.6949698860025368644e-07"
+                                ixz="-3.0547191113991445075e-06" iyy="0.01135819577007524811"
+                                iyz="8.3074352926071100002e-08" izz="0.01672728441358811366" />
+                </inertial>
+        </link>
+
+        <joint name="delta_c" type="revolute">
+                <origin
+                        xyz="0.0074999999999999511502 -1.1102230246251565404e-16 -0.1550999999999998491"
+                        rpy="-1.570796326794896558 1.9116884879883908709e-16 1.570796326794896558" />
+                <parent link="part_4_3" />
+                <child link="part_5_3" />
+                <axis xyz="0 0 1" />
+                <limit effort="1" velocity="20" lower="-3.141592653589793116"
+                        upper="3.141592653589793116" />
+                <joint_properties friction="0.0" />
+        </joint>
+
+        <joint name="gamma_c" type="fixed">
+                <origin xyz="0.38099999999999967226 0.40640000000000020552 0.26939999999999991731"
+                        rpy="-6.1629758220391547298e-33 -0 -4.2168791772922102261e-81" />
+                <parent link="chasis" />
+                <child link="part_4_3" />
+                <axis xyz="0 0 1" />
+                <limit effort="1" velocity="20" />
+                <joint_properties friction="0.0" />
+        </joint>
+
+        <link name="part_4_4">
+                <visual>
+                        <origin
+                                xyz="0.3809999999999998388 -0.40639999999999998348 -0.26939999999999991731"
+                                rpy="0 -0 -3.141592653589793116" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_4.stl" />
+                        </geometry>
+                        <material name="part_4_material">
+                                <color
+                                        rgba="0.98039215686274505668 0.71372549019607844922 0.0039215686274509803377 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="0.3809999999999998388 -0.40639999999999998348 -0.26939999999999991731"
+                                rpy="0 -0 -3.141592653589793116" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_4.stl" />
+                        </geometry>
+                </collision>
+                <inertial>
+                        <origin
+                                xyz="5.5511151231257827021e-17 -1.0217019427877194253e-16 -0.078504789688329357222"
+                                rpy="0 0 0" />
+                        <mass value="1.6288621573055650504" />
+                        <inertia ixx="0.0059608080766996619781" ixy="5.5852073092919693807e-20"
+                                ixz="0" iyy="0.005504741289673344834" iyz="0"
+                                izz="0.00069920316242749573632" />
+                </inertial>
+        </link>
+
+        <link name="part_5_4">
+                <visual>
+                        <origin
+                                xyz="-0.00038552631445866458737 -0.11428951545201304629 -0.5259000000000004782"
+                                rpy="-1.570796326794896558 -1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/tyre.stl" />
+                        </geometry>
+                        <material name="tyre_material">
+                                <color
+                                        rgba="0.49803921568627451677 0.49803921568627451677 0.49803921568627451677 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="-0.00038552631445866458737 -0.11428951545201304629 -0.5259000000000004782"
+                                rpy="-1.570796326794896558 -1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/tyre.stl" />
+                        </geometry>
+                </collision>
+                <visual>
+                        <origin
+                                xyz="0.40639999999999981695 0.11429999999999984617 0.38849999999999973443"
+                                rpy="1.570796326794896558 1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_5.stl" />
+                        </geometry>
+                        <material name="part_5_material">
+                                <color
+                                        rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+                        </material>
+                </visual>
+                <collision>
+                        <origin
+                                xyz="0.40639999999999981695 0.11429999999999984617 0.38849999999999973443"
+                                rpy="1.570796326794896558 1.570796326794896558 0" />
+                        <geometry>
+                                <mesh filename="package://scratch_bot/description/part_5.stl" />
+                        </geometry>
+                </collision>
+                <inertial>
+                        <origin
+                                xyz="-5.4485542035869724596e-05 1.4817569091365525231e-06 -0.051294107386095647017"
+                                rpy="0 0 0" />
+                        <mass value="3.2210221139911539012" />
+                        <inertia ixx="0.011390144314616511279" ixy="-8.6949698860141285103e-07"
+                                ixz="-3.0547191113997213369e-06" iyy="0.011358195770075230763"
+                                iyz="8.307435293217178863e-08" izz="0.016727284413588127537" />
+                </inertial>
+        </link>
+
+        <joint name="delta_d" type="revolute">
+                <origin
+                        xyz="-0.0075000000000000066613 5.5511151231257827021e-17 -0.15510000000000001563"
+                        rpy="1.5707963267948970021 1.178999914605389554 1.5707963267948970021" />
+                <parent link="part_4_4" />
+                <child link="part_5_4" />
+                <axis xyz="0 0 1" />
+                <limit effort="1" velocity="20" lower="-3.141592653589793116"
+                        upper="3.141592653589793116" />
+                <joint_properties friction="0.0" />
+        </joint>
+
+        <joint name="gamma_d" type="fixed">
+                <origin xyz="-0.38099999999999978328 0.40640000000000003899 0.2693999999999998618"
+                        rpy="1.1246876189595594034e-31 -1.1318486891877793266e-16 4.676305458861335744e-17" />
+                <parent link="chasis" />
+                <child link="part_4_4" />
+                <axis xyz="0 0 1" />
+                <limit effort="1" velocity="20" />
+                <joint_properties friction="0.0" />
+        </joint>
+        
+<!-- <ros2_control name="GreenBot" type="system">
+        <hardware>
+                <plugin>greenbot_arduino/GreenBotSystemHardware</plugin>
+                <param name="wheel_delta_a_name">delta_a</param>
+                <param name="wheel_delta_b_name">delta_b</param>
+                <param name="wheel_delta_c_name">delta_c</param>
+                <param name="wheel_delta_d_name">delta_d</param>
+
+
+                <param name="device_delta">/dev/ttyACM0</param>
+
+                <param name="loop_rate">300</param>
+                <param name="baud_rate">9600</param>
+                <param name="timeout_ms">1000</param>
+                <param name="enc_counts_per_rev">93132</param>
+        </hardware>
+
+        <joint name="delta_a">
+                <command_interface name="velocity" />
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+        </joint>
+        <joint name="delta_b">
+                <command_interface name="velocity" />
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+        </joint>
+        <joint name="delta_c">
+                <command_interface name="velocity" />
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+        </joint>
+        <joint name="delta_d">
+                <command_interface name="velocity" />
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+        </joint>
+</ros2_control> -->
+
+         <ros2_control name="MockHardwareSystem" type="system">
+                <hardware>
+                        <plugin>mock_components/GenericSystem</plugin>
+                        <param name="calculate_dynamics">false</param>
+                        <param name="custom_interface_with_following_offset"></param>
+                        <param name="disable_commands">false</param>
+                        <param name="mock_gpio_commands">false</param>
+                        <param name="mock_sensor_commands">false</param>
+                        <param name="position_state_following_offset">0.0</param>
+                </hardware>
+                <joint name="delta_a">
+                        <command_interface name="velocity" />
+                        <state_interface name="position" />
+                        <state_interface name="velocity" />
+                </joint>
+                <joint name="delta_b">
+                        <command_interface name="velocity" />
+                        <state_interface name="position" />
+                        <state_interface name="velocity" />
+                </joint>
+                <joint name="delta_c">
+                        <command_interface name="velocity" />
+                        <state_interface name="position" />
+                        <state_interface name="velocity" />
+                </joint>
+                <joint name="delta_d">
+                        <command_interface name="velocity" />
+                        <state_interface name="position" />
+                        <state_interface name="velocity" />
+                </joint>
+        </ros2_control>
+
+
+</robot>
